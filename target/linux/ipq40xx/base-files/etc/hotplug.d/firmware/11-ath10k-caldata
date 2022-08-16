@@ -71,6 +71,7 @@ case "$FIRMWARE" in
 	century,wr142ac-nand |\
 	cilab,meshpoint-one |\
 	ezviz,cs-w3-wd1200g-eup |\
+	glinet,gl-a1300 |\
 	glinet,gl-ap1300 |\
 	glinet,gl-b1300 |\
 	glinet,gl-b2200 |\
@@ -208,6 +209,7 @@ case "$FIRMWARE" in
 	century,wr142ac-nand |\
 	cilab,meshpoint-one |\
 	ezviz,cs-w3-wd1200g-eup |\
+	glinet,gl-a1300 |\
 	glinet,gl-ap1300 |\
 	glinet,gl-b1300 |\
 	glinet,gl-b2200 |\

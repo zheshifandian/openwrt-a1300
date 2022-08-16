@@ -31,6 +31,8 @@ ubootenv_mtdinfo () {
 
 case "$board" in
 alfa-network,ap120c-ac|\
+glinet,gl-a1300 |\
+glinet,gl-ap1300 |\
 glinet,gl-b1300|\
 glinet,gl-b2200|\
 luma,wrtq-329acn|\

@@ -224,6 +224,7 @@ platform_do_upgrade() {
 	edgecore,ecw5211 |\
 	edgecore,oap100 |\
 	engenius,eap2200 |\
+	glinet,gl-a1300 |\
 	glinet,gl-ap1300 |\
 	hiwifi,c526a |\
 	hiwifi,c526a-128m |\

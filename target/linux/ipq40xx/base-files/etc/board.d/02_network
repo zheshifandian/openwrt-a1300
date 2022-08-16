@@ -89,6 +89,7 @@ ipq40xx_setup_interfaces()
 		ucidef_add_switch "switch0" \
 			"0t@eth0" "3:lan" "4:lan" "5:lan"
 		;;
+	glinet,gl-a1300 |\
 	glinet,gl-ap1300 |\
 	glinet,gl-b1300|\
 	glinet,gl-s1300|\
@@ -193,6 +194,10 @@ ipq40xx_setup_macs()
 	ezviz,cs-w3-wd1200g-eup)
 		label_mac=$(mtd_get_mac_binary "ART" 0x6)
 		;;
+	glinet,gl-a1300)
+		wan_mac=$(mtd_get_mac_binary ART 0)
+		lan_mac=$(macaddr_add "$wan_mac" 1)
+		;;
 	hiwifi,c526a|\
 	hiwifi,c526a-128m)
 		lan_mac=$(mtd_get_mac_ascii bdinfo "Vfac_mac ")
@@ -200,10 +205,6 @@ ipq40xx_setup_macs()
 		;;
 	linksys,ea6350v3)
 		wan_mac=$(mtd_get_mac_ascii devinfo hw_mac_addr)
-		lan_mac=$(macaddr_add "$wan_mac" 1)
-		;;
-	p2w,r619ac)
-		wan_mac=$(cat /sys/class/net/eth0/address)
 		lan_mac=$(macaddr_add "$wan_mac" 1)
 		;;
 	mikrotik,cap-ac |\
@@ -217,6 +218,10 @@ ipq40xx_setup_macs()
 	mikrotik,sxtsq-5-ac)
 		lan_mac=$(cat /sys/firmware/mikrotik/hard_config/mac_base)
 		label_mac="$lan_mac"
+		;;
+	p2w,r619ac)
+		wan_mac=$(cat /sys/class/net/eth0/address)
+		lan_mac=$(macaddr_add "$wan_mac" 1)
 		;;
 	esac
 

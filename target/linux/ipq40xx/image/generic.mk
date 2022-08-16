@@ -545,6 +545,22 @@ define Device/ezviz_cs-w3-wd1200g-eup
 endef
 TARGET_DEVICES += ezviz_cs-w3-wd1200g-eup
 
+define Device/glinet_gl-a1300
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := GL.iNet
+	DEVICE_MODEL := GL-A1300
+	SOC := qcom-ipq4018
+	DEVICE_DTS_CONFIG := config@ap.dk01.1-c2
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	IMAGE_SIZE := 131072k
+	KERNEL_INSTALL := 1
+	DEVICE_PACKAGES := ipq-wifi-glinet_gl-a1300
+	IMAGE/sysupgrade.tar := sysupgrade-tar
+endef
+TARGET_DEVICES += glinet_gl-a1300
+
 define Device/glinet_gl-ap1300
 	$(call Device/FitImage)
 	$(call Device/UbiFit)
