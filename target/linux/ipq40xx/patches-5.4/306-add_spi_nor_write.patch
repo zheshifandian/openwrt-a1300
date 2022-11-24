@@ -1,0 +1,11 @@
+--- a/drivers/mtd/spi-nor/spi-nor.c
++++ b/drivers/mtd/spi-nor/spi-nor.c
+@@ -5025,6 +5025,8 @@ int spi_nor_scan(struct spi_nor *nor, co
+ 	else
+ 		mtd->_write = spi_nor_write;
+ 
++	mtd->_panic_write = spi_nor_write;
++
+ 	if (info->flags & USE_FSR)
+ 		nor->flags |= SNOR_F_USE_FSR;
+ 	if (info->flags & SPI_NOR_HAS_TB)
